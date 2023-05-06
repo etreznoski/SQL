@@ -1,0 +1,31 @@
+StoreDatabaseKAProject1
+Khan Academy Store Database Project:
+Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. 
+You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. 
+You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items.
+
+CREATE TABLE gods_apothecary (id INTEGER PRIMARY KEY, item TEXT, category TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO gods_apothecary VALUES (1, "Little Blue Potion", "Love", 30, 5);
+INSERT iNTO gods_apothecary VALUES (2, "Booze Berry Remedy", "Health & Wellness", 5, 20);
+INSERT INTO gods_apothecary VALUES (3, "Lusty Lady", "Love", 25, 3);
+INSERT INTO gods_apothecary VALUES (4, "Sugar Daddy Elixer", "Love", 45, 2);
+INSERT INTO gods_apothecary VALUES (5, "Sleepy Time Tea", "Health & Wellness", 3, 20);
+INSERT INTO gods_apothecary VALUES (6, "Forever Sleepy Time Tea", "Poison", 60, 2);
+INSERT INTO gods_apothecary VALUES (7, "Redbull Energy Booster", "Health & Wellness", 6, 12);
+INSERT INTO gods_apothecary VALUES (8, "Short Rest", "Poison", 40, 4);
+INSERT INTO gods_apothecary VALUES (9, "All-cure Elixer", "Health & Wellness", 500, 1);
+INSERT INTO gods_apothecary VALUES (10, "Dummy Thicc Juice", "Health & Wellness", 35, 6);
+INSERT INTO gods_apothecary VALUES (11, "Lilith's Revenge", "Poison", 75, 5);
+INSERT INTO gods_apothecary VALUES (12, "Morning Magic", "Health & Wellness", 4, 20);
+INSERT INTO gods_apothecary VALUES (13, "Irene's Immunity Booster", "Health & Wellness", 10, 15);
+INSERT INTO gods_apothecary VALUES (14, "Life of the Party Lotion", "Love", 20, 5);
+INSERT INTO gods_apothecary VALUES (15, "Poppy's Pimple Potion", "Health & Wellness", 3, 30);
+
+SELECT * FROM gods_apothecary;
+SELECT * FROM gods_apothecary ORDER BY price;
+SELECT category, AVG(price) FROM gods_apothecary GROUP BY category;
+SELECT item, price, quantity FROM gods_apothecary WHERE category = "Health & Wellness"
+ORDER By price;
+SELECT category, SUM(quantity) FROM gods_apothecary WHERE category = "Poison";
+SELECT category, SUM(quantity) FROM gods_apothecary GROUP BY category;
